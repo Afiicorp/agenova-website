@@ -1,0 +1,27 @@
+{
+  "name": "agenova-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -H 0.0.0.0 -p 3000",
+    "build": "next build",
+    "start": "next build && next start -H 0.0.0.0 -p 3000",
+    "serve": "next start -H 0.0.0.0 -p 3000",
+    "lint": "next lint"
+  },
+  "packageManager": "yarn@1.22.22",
+  "dependencies": {
+    "next": "15",
+    "react": "19",
+    "react-dom": "19"
+  },
+  "devDependencies": {
+    "@types/node": "22",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "autoprefixer": "^10.6.1",
+    "postcss": "^8.5.28",
+    "tailwindcss": "3",
+    "typescript": "5.8"
+  }
+}
