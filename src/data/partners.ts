@@ -12,6 +12,8 @@ const entry = (
   initials: string,
   country: string,
   focus: string,
+  website: string,
+  category: "partner" | "client",
   logo?: Logo,
 ): PartnerEntry => {
   const logoFile = logo?.file ?? `${slug}.png`;
@@ -23,7 +25,8 @@ const entry = (
     country,
     focus,
     sector: focus,
-    category: "partner",
+    category,
+    website,
     logo: `/images/partners/${logoFile}`,
     logoBg: logo?.dark ? "dark" : undefined,
     logoSource: logo?.source,
@@ -44,7 +47,7 @@ export const partnerImages = [
 /**
  * Strategic Partners
  *
- * Exactly 6 partners as defined for the Agenova website.
+ * Exactly 6 partners.
  */
 export const partners: PartnerEntry[] = [
   entry(
@@ -53,6 +56,8 @@ export const partners: PartnerEntry[] = [
     "HPC",
     "Germany",
     "Port consulting, infrastructure and logistics",
+    "https://www.hamburgportconsulting.com/",
+    "partner",
     {
       file: "hamburg-port-consulting.svg",
       source: "hamburgportconsulting.com",
@@ -65,6 +70,8 @@ export const partners: PartnerEntry[] = [
     "DB",
     "Germany",
     "Railway infrastructure and transport",
+    "https://int.bahn.de/en/",
+    "partner",
     {
       file: "deutsche-bahn.png",
       source: "int.bahn.de",
@@ -77,6 +84,8 @@ export const partners: PartnerEntry[] = [
     "BR",
     "Belgium",
     "Railway infrastructure and station redevelopment",
+    "https://www.belgiantrain.be/en",
+    "partner",
     {
       file: "belgian-railways.png",
       source: "Belgian Railways",
@@ -89,6 +98,8 @@ export const partners: PartnerEntry[] = [
     "IEC",
     "Israel",
     "Power generation, transmission and distribution",
+    "https://iec-global.com/",
+    "partner",
     {
       file: "israel-electric-corporation.svg",
       source: "iec-global.com",
@@ -101,6 +112,8 @@ export const partners: PartnerEntry[] = [
     "M",
     "Israel",
     "Water supply, treatment, desalination and wastewater infrastructure",
+    "https://www.mekorot-int.com/",
+    "partner",
     {
       file: "mekorot.png",
       source: "mekorot-int.com",
@@ -114,6 +127,8 @@ export const partners: PartnerEntry[] = [
     "OG",
     "Germany",
     "Engineering, infrastructure and technical services",
+    "https://www.obermeyer-group.com/",
+    "partner",
     {
       file: "obermeyer.svg",
       source: "obermeyer-group.com",
@@ -133,6 +148,8 @@ export const clients: PartnerEntry[] = [
     "L&T",
     "India",
     "Engineering and major infrastructure",
+    "https://www.larsentoubro.com/",
+    "client",
     {
       file: "larsen-toubro.svg",
       source: "larsentoubro.com",
@@ -146,6 +163,8 @@ export const clients: PartnerEntry[] = [
     "DSC",
     "India",
     "Airport and infrastructure construction",
+    "https://www.dsclimited.com/",
+    "client",
     {
       file: "dsc.png",
       source: "dsclimited.com",
@@ -158,6 +177,8 @@ export const clients: PartnerEntry[] = [
     "SP",
     "India",
     "Industrial and infrastructure construction",
+    "https://www.shapoorjipallonji.com/",
+    "client",
     {
       file: "shapoorji-pallonji.svg",
       source: "shapoorjipallonji.com",
@@ -170,6 +191,8 @@ export const clients: PartnerEntry[] = [
     "GC",
     "Türkiye",
     "Railways, highways and civil infrastructure",
+    "https://www.gulsanholding.com.tr/en",
+    "client",
     {
       file: "gulsan.svg",
       source: "gulsan.com.tr",
@@ -183,6 +206,8 @@ export const clients: PartnerEntry[] = [
     "EE",
     "Israel",
     "Electrical infrastructure, engineering and equipment",
+    "https://www.electra.co.il/en",
+    "client",
     {
       file: "electra-elco.png",
       source: "electra.co.il",
@@ -195,6 +220,8 @@ export const clients: PartnerEntry[] = [
     "SSEL",
     "India",
     "Transformers and electrical equipment",
+    "https://ssel.in/",
+    "client",
     {
       file: "shirdi-sai-electricals.png",
       source: "ssel.in",
@@ -207,6 +234,8 @@ export const clients: PartnerEntry[] = [
     "PC",
     "India",
     "Power and communication cables",
+    "https://paramountcables.com/",
+    "client",
     {
       file: "paramount-communications.png",
       source: "paramountcables.com",
@@ -219,6 +248,8 @@ export const clients: PartnerEntry[] = [
     "BP",
     "India",
     "Power generation and infrastructure",
+    "https://www.bajajpower.com/",
+    "client",
     {
       file: "bajaj-power.jpg",
       source: "bajajpower.com",
@@ -231,6 +262,8 @@ export const clients: PartnerEntry[] = [
     "ES",
     "Belgium",
     "Railway engineering and station redevelopment",
+    "https://www.eurostation.be/",
+    "client",
     {
       file: "eurostation.png",
       source: "eurostation.be",
@@ -243,6 +276,8 @@ export const clients: PartnerEntry[] = [
     "MA",
     "Germany",
     "Airport infrastructure and operations",
+    "https://www.munich-airport.de/",
+    "client",
     {
       file: "munich-airport.png",
       source: "munich-airport.de",
@@ -252,8 +287,6 @@ export const clients: PartnerEntry[] = [
 
 /**
  * Client sector categories used on the Partners & Clients page.
- *
- * These are derived from the clients list above.
  */
 export const clientSectors = [
   {
