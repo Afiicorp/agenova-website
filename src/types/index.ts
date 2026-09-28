@@ -108,6 +108,9 @@ export type PartnerEntry = {
   initials: string;
   country: string;
   focus: string;
+  sector: string;
+  category: "partner" | "client";
+  website?: string;
   logo: string;
   logoBg?: "dark";
   logoSource?: string;

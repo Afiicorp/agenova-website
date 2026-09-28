@@ -13,7 +13,8 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { SourceNote } from "@/components/ui/SourceNote";
 import { heroMedia } from "@/data/hero";
 import { offices } from "@/data/offices";
-import { allPartners } from "@/data/partners";
+import { clients, partners } from "@/data/partners";
+import { PartnerLink } from "@/components/partners/PartnerLink";
 import { projects } from "@/data/projects";
 import { services } from "@/data/services";
 import { site } from "@/data/site";
@@ -100,16 +101,37 @@ export default function HomePage() {
             intro="Selected relationships of the AFII Group across engineering, energy, water and transport infrastructure."
             link={{ label: "View all", href: "/partners", testId: "home-partners-link" }}
           />
-          <ul className="grid grid-cols-2 gap-3 sm:grid-cols-4 md:hidden" data-testid="home-partner-logos">
-            {allPartners.map((e) => (
-              <li key={e.slug} title={e.name}>
-                <PartnerLogo entry={e} className="h-16" />
-                <p className="mt-1.5 truncate text-xs text-muted">{e.name}</p>
-              </li>
+          <div className="space-y-6 md:hidden" data-testid="home-partner-logos">
+            {[
+              { label: "Partners", items: partners },
+              { label: "Clients", items: clients },
+            ].map((row) => (
+              <div key={row.label}>
+                <h3 className="mb-3 text-sm font-semibold text-navy">{row.label}</h3>
+                <ul className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+                  {row.items.map((e) => (
+                    <li key={e.slug} title={e.name}>
+                      <PartnerLink entry={e} className="block">
+                        <PartnerLogo entry={e} className="h-16" />
+                        <p className="mt-1.5 truncate text-xs text-muted">{e.name}</p>
+                      </PartnerLink>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
-          </ul>
+          </div>
         </Reveal>
-        <PartnerMarquee testId="home-partner-marquee" />
+        <div className="hidden space-y-6 md:block">
+          <div>
+            <h3 className="container-site mb-3 text-sm font-semibold text-navy">Partners</h3>
+            <PartnerMarquee entries={partners} repeat={2} label="Partner logos" testId="home-partners-marquee" />
+          </div>
+          <div>
+            <h3 className="container-site mb-3 text-sm font-semibold text-navy">Clients</h3>
+            <PartnerMarquee entries={clients} repeat={1} reverse label="Client logos" testId="home-clients-marquee" />
+          </div>
+        </div>
       </section>
 
       <section className="section" aria-labelledby="leadership-title" data-testid="home-leadership">
