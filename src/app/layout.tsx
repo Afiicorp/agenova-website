@@ -1,20 +1,15 @@
-import type { Metadata, Viewport } from "next";
-import { IBM_Plex_Sans } from "next/font/google";
+﻿import type { Metadata, Viewport } from "next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { site } from "@/data/site";
 import "./globals.css";
 
-const plex = IBM_Plex_Sans({
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600"],
-  variable: "--font-plex",
-  display: "swap",
-});
-
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: { default: "AGENOVA | Engineering & EPCM", template: "%s | AGENOVA" },
+  title: {
+    default: "AGENOVA | Engineering & EPCM",
+    template: "%s | AGENOVA",
+  },
   description: site.description,
   applicationName: "AGENOVA",
   openGraph: {
@@ -23,19 +18,39 @@ export const metadata: Metadata = {
     locale: "en_GB",
     title: "AGENOVA | Engineering & EPCM",
     description: site.description,
-    images: [{ url: "/images/hero/hero-01.jpg", width: 1264, height: 848 }],
+    images: [
+      {
+        url: "/images/hero/hero-01.jpg",
+        width: 1264,
+        height: 848,
+      },
+    ],
   },
-  twitter: { card: "summary_large_image" },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
-export const viewport: Viewport = { themeColor: "#0B2A4A" };
+export const viewport: Viewport = {
+  themeColor: "#0B2A4A",
+};
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en" className={plex.variable} suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "document.documentElement.classList.add('js')",
+          }}
+        />
       </head>
+
       <body className="flex min-h-screen flex-col font-sans">
         <a
           href="#main"
@@ -44,10 +59,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           Skip to content
         </a>
+
         <Header />
+
         <main id="main" className="flex-1">
           {children}
         </main>
+
         <Footer />
       </body>
     </html>
