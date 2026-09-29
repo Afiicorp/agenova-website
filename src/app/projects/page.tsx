@@ -14,7 +14,7 @@ export const metadata = pageMetadata({ title: page.title, description: page.desc
 export default function ProjectsPage() {
   return (
     <>
-      <PageHeader title="Projects" lead={page.lead} breadcrumbs={[{ label: "Home", href: "/" }, { label: "Projects" }]}>
+      <PageHeader title={page.title} lead={page.lead} breadcrumbs={[{ label: "Home", href: "/" }, { label: "Projects" }]}>
         <SourceNote className="mt-5" />
       </PageHeader>
       <div className="container-site section space-y-14 md:space-y-16">

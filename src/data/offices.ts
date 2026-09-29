@@ -4,7 +4,6 @@ const shared = {
   phoneDisplay: "+49 157 39482762",
   phoneHref: "+4915739482762",
   email: "s@afii.eu",
-  address: "Address on request",
 };
 
 export const offices: Office[] = [
@@ -14,7 +13,8 @@ export const offices: Office[] = [
     country: "Germany",
     summary: "Office contact for enquiries in Germany.",
     ...shared,
-    mapUrl: "https://www.google.com/maps/search/?api=1&query=Frankfurt%20am%20Main%2C%20Germany",
+    address: "Alfred-Herrhausen-Allee 3-5, 65760 Eschborn, Germany",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Alfred-Herrhausen-Allee+3-5%2C+65760+Eschborn%2C+Germany",
     image: { src: "/images/offices/frankfurt.jpg", alt: "Frankfurt skyline across the river Main" },
     imageCaption: "Representative city imagery, Frankfurt",
   },
@@ -24,7 +24,8 @@ export const offices: Office[] = [
     country: "United Kingdom",
     summary: "Office contact for enquiries in the United Kingdom.",
     ...shared,
-    mapUrl: "https://www.google.com/maps/search/?api=1&query=London%2C%20United%20Kingdom",
+    address: "Kemp House, 124-128 City Road, London EC1V 2NX, UK",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Kemp+House%2C+124-128+City+Road%2C+London+EC1V+2NX%2C+UK",
     image: { src: "/images/offices/london.jpg", alt: "City of London skyline seen from the river Thames" },
     imageCaption: "Representative city imagery, London",
   },
@@ -34,7 +35,8 @@ export const offices: Office[] = [
     country: "Switzerland",
     summary: "Office contact for enquiries in Switzerland.",
     ...shared,
-    mapUrl: "https://www.google.com/maps/search/?api=1&query=Zug%2C%20Switzerland",
+    address: "Gotthardstrasse 14, 6300 Zug, Switzerland",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Gotthardstrasse+14%2C+6300+Zug%2C+Switzerland",
     image: { src: "/images/offices/zug.jpg", alt: "Lakeside promenade in Zug with Lake Zug and mountains" },
     imageCaption: "Representative city imagery, Zug",
   },

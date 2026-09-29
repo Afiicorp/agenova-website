@@ -1,343 +1,60 @@
-import type { PartnerEntry } from "@/types";
+﻿import type { PartnerCategory, PartnerEntry } from "@/types";
 
-type Logo = {
-  file: string;
-  source: string;
-  dark?: boolean;
-};
+type Logo = { file: string; source: string; dark?: boolean };
+type Base = Omit<PartnerEntry, "logo" | "logoBg" | "logoSource" | "category">;
 
-const entry = (
-  slug: string,
-  name: string,
-  initials: string,
-  country: string,
-  focus: string,
-  website: string,
-  category: "partner" | "client",
-  logo?: Logo,
-): PartnerEntry => {
-  const logoFile = logo?.file ?? `${slug}.png`;
-
-  return {
-    slug,
-    name,
-    initials,
-    country,
-    focus,
-    sector: focus,
-    category,
-    website,
-    logo: `/images/partners/${logoFile}`,
-    logoBg: logo?.dark ? "dark" : undefined,
-    logoSource: logo?.source,
-  };
-};
+const org = (category: PartnerEntry["category"], base: Base, logo?: Logo): PartnerEntry => ({
+  ...base,
+  category,
+  logo: `/images/partners/${logo?.file ?? `${base.slug}.png`}`,
+  logoBg: logo?.dark ? "dark" : undefined,
+  logoSource: logo?.source,
+});
 
 export const partnerImages = [
-  {
-    src: "/images/general/partner-network.jpg",
-    alt: "Aerial view of a motorway interchange",
-  },
-  {
-    src: "/images/general/partner-network-2.jpg",
-    alt: "Aerial view of a container port terminal",
-  },
+  { src: "/images/general/partner-network.jpg", alt: "Aerial view of a motorway interchange" },
+  { src: "/images/general/partner-network-2.jpg", alt: "Aerial view of a container port terminal" },
 ];
 
-/**
- * Strategic Partners
- *
- * Exactly 6 partners.
- */
 export const partners: PartnerEntry[] = [
-  entry(
-    "hamburg-port-consulting",
-    "Hamburg Port Consulting",
-    "HPC",
-    "Germany",
-    "Port consulting, infrastructure and logistics",
-    "https://www.hamburgportconsulting.com/",
-    "partner",
-    {
-      file: "hamburg-port-consulting.svg",
-      source: "hamburgportconsulting.com",
-    },
-  ),
-
-  entry(
-    "deutsche-bahn",
-    "Deutsche Bahn",
-    "DB",
-    "Germany",
-    "Railway infrastructure and transport",
-    "https://int.bahn.de/en/",
-    "partner",
-    {
-      file: "deutsche-bahn.png",
-      source: "int.bahn.de",
-    },
-  ),
-
-  entry(
-    "belgian-railways",
-    "Belgian Railways",
-    "BR",
-    "Belgium",
-    "Railway infrastructure and station redevelopment",
-    "https://www.belgiantrain.be/en",
-    "partner",
-    {
-      file: "belgian-railways.png",
-      source: "Belgian Railways",
-    },
-  ),
-
-  entry(
-    "israel-electric-corporation",
-    "Israel Electric Corporation (IEC)",
-    "IEC",
-    "Israel",
-    "Power generation, transmission and distribution",
-    "https://iec-global.com/",
-    "partner",
-    {
-      file: "israel-electric-corporation.svg",
-      source: "iec-global.com",
-    },
-  ),
-
-  entry(
-    "mekorot",
-    "Mekorot",
-    "M",
-    "Israel",
-    "Water supply, treatment, desalination and wastewater infrastructure",
-    "https://www.mekorot-int.com/",
-    "partner",
-    {
-      file: "mekorot.png",
-      source: "mekorot-int.com",
-      dark: true,
-    },
-  ),
-
-  entry(
-    "obermeyer",
-    "Obermeyer Group",
-    "OG",
-    "Germany",
-    "Engineering, infrastructure and technical services",
-    "https://www.obermeyer-group.com/",
-    "partner",
-    {
-      file: "obermeyer.svg",
-      source: "obermeyer-group.com",
-    },
-  ),
+  org("partner", { slug: "hamburg-port-consulting", name: "Hamburg Port Consulting", initials: "HPC", country: "Germany", focus: "Port and maritime consulting", sector: "Ports & Maritime", website: "https://www.hamburgportconsulting.com" }, { file: "hamburg-port-consulting.svg", source: "hamburgportconsulting.com" }),
+  org("partner", { slug: "deutsche-bahn", name: "Deutsche Bahn", initials: "DB", country: "Germany", focus: "Railway operations and infrastructure", sector: "Railways", website: "https://int.bahn.de/en" }, { file: "deutsche-bahn.png", source: "Wikimedia Commons, Deutsche Bahn AG-Logo.svg (public domain)" }),
+  org("partner", { slug: "belgian-railways", name: "Belgian Railways", initials: "BR", country: "Belgium", focus: "Railway infrastructure and station redevelopment", sector: "Railways", website: "https://www.belgiantrain.be" }, { file: "belgian-railways.png", source: "Wikimedia Commons, SNCB logo.svg (public domain)" }),
+  org("partner", { slug: "israel-electric-corporation", name: "Israel Electric Corporation (IEC)", initials: "IEC", country: "Israel", focus: "Power generation, transmission and distribution", sector: "Energy & Power", website: "https://iec-global.com/" }, { file: "israel-electric-corporation.svg", source: "Hebrew Wikipedia (IsraelElectric.svg)" }),
+  org("partner", { slug: "mekorot", name: "Mekorot", initials: "M", country: "Israel", focus: "Water supply, treatment, desalination and wastewater infrastructure", sector: "Water", website: "https://www.mekorot.co.il/" }, { file: "mekorot.png", source: "mekorot-int.com", dark: true }),
+  org("partner", { slug: "obermeyer-group", name: "Obermeyer Group", initials: "OG", country: "Germany", focus: "Engineering and planning consultancy", sector: "Engineering", website: "https://www.obermeyer-group.com" }, { file: "obermeyer.svg", source: "obermeyer-group.com", dark: true }),
 ];
 
-/**
- * Clients
- *
- * Organizations presented as clients rather than strategic partners.
- */
-export const clients: PartnerEntry[] = [
-  entry(
-    "larsen-toubro",
-    "Larsen & Toubro (L&T)",
-    "L&T",
-    "India",
-    "Engineering and major infrastructure",
-    "https://www.larsentoubro.com/",
-    "client",
-    {
-      file: "larsen-toubro.svg",
-      source: "larsentoubro.com",
-      dark: true,
-    },
-  ),
-
-  entry(
-    "ds-constructions",
-    "DS Constructions (DSC)",
-    "DSC",
-    "India",
-    "Airport and infrastructure construction",
-    "https://www.dsclimited.com/",
-    "client",
-    {
-      file: "dsc.png",
-      source: "dsclimited.com",
-    },
-  ),
-
-  entry(
-    "shapoorji-pallonji",
-    "Shapoorji Pallonji",
-    "SP",
-    "India",
-    "Industrial and infrastructure construction",
-    "https://www.shapoorjipallonji.com/",
-    "client",
-    {
-      file: "shapoorji-pallonji.svg",
-      source: "shapoorjipallonji.com",
-    },
-  ),
-
-  entry(
-    "gulsan-construction",
-    "Gülsan Construction",
-    "GC",
-    "Türkiye",
-    "Railways, highways and civil infrastructure",
-    "https://www.gulsanholding.com.tr/en",
-    "client",
-    {
-      file: "gulsan.svg",
-      source: "gulsan.com.tr",
-      dark: true,
-    },
-  ),
-
-  entry(
-    "electra-elco",
-    "Electra / Elco C&S",
-    "EE",
-    "Israel",
-    "Electrical infrastructure, engineering and equipment",
-    "https://www.electra.co.il/en",
-    "client",
-    {
-      file: "electra-elco.png",
-      source: "electra.co.il",
-    },
-  ),
-
-  entry(
-    "shirdi-sai-electricals",
-    "Shirdi Sai Electricals (SSEL)",
-    "SSEL",
-    "India",
-    "Transformers and electrical equipment",
-    "https://ssel.in/",
-    "client",
-    {
-      file: "shirdi-sai-electricals.png",
-      source: "ssel.in",
-    },
-  ),
-
-  entry(
-    "paramount-communications",
-    "Paramount Communications (Paramount Cables)",
-    "PC",
-    "India",
-    "Power and communication cables",
-    "https://paramountcables.com/",
-    "client",
-    {
-      file: "paramount-communications.png",
-      source: "paramountcables.com",
-    },
-  ),
-
-  entry(
-    "bajaj-power",
-    "Bajaj Power",
-    "BP",
-    "India",
-    "Power generation and infrastructure",
-    "https://www.bajajpower.com/",
-    "client",
-    {
-      file: "bajaj-power.jpg",
-      source: "bajajpower.com",
-    },
-  ),
-
-  entry(
-    "eurostation-euro-immo-star",
-    "EuroStation / Euro Immo Star",
-    "ES",
-    "Belgium",
-    "Railway engineering and station redevelopment",
-    "https://www.eurostation.be/",
-    "client",
-    {
-      file: "eurostation.png",
-      source: "eurostation.be",
-    },
-  ),
-
-  entry(
-    "munich-airport",
-    "Munich Airport",
-    "MA",
-    "Germany",
-    "Airport infrastructure and operations",
-    "https://www.munich-airport.de/",
-    "client",
-    {
-      file: "munich-airport.png",
-      source: "munich-airport.de",
-    },
-  ),
-];
-
-/**
- * Client sector categories used on the Partners & Clients page.
- */
-export const clientSectors = [
+export const allClientSectors: PartnerCategory[] = [
   {
     slug: "engineering-infrastructure",
     number: "01",
     title: "Engineering & Infrastructure",
-    entries: clients.filter((client) =>
-      [
-        "larsen-toubro",
-        "ds-constructions",
-        "shapoorji-pallonji",
-        "gulsan-construction",
-      ].includes(client.slug),
-    ),
+    entries: [
+      org("client", { slug: "larsen-toubro", name: "Larsen & Toubro (L&T)", initials: "L&T", country: "India", focus: "Engineering and major infrastructure", sector: "Engineering & Infrastructure", website: "https://www.larsentoubro.com/" }, { file: "larsen-toubro.svg", source: "larsentoubro.com", dark: true }),
+      org("client", { slug: "ds-constructions", name: "DS Constructions (DSC)", initials: "DSC", country: "India", focus: "Airport and infrastructure construction", sector: "Engineering & Infrastructure", website: "https://www.dsclimited.com/" }, { file: "dsc.png", source: "dsclimited.com" }),
+      org("client", { slug: "shapoorji-pallonji", name: "Shapoorji Pallonji", initials: "SP", country: "India", focus: "Industrial and infrastructure construction", sector: "Engineering & Infrastructure", website: "https://www.shapoorjipallonji.com/" }, { file: "shapoorji-pallonji.svg", source: "shapoorjipallonji.com" }),
+      org("client", { slug: "gulsan-construction", name: "Gülsan Construction", initials: "GC", country: "Türkiye", focus: "Railways, highways and civil infrastructure", sector: "Engineering & Infrastructure", website: "https://www.gulsanholding.com.tr/en" }, { file: "gulsan.svg", source: "gulsanholding.com.tr (Gülsan Holding)" }),
+    ],
   },
-
   {
-    slug: "energy-power",
+    slug: "energy-power-electrical",
     number: "02",
     title: "Energy & Power",
-    entries: clients.filter((client) =>
-      [
-        "electra-elco",
-        "shirdi-sai-electricals",
-        "paramount-communications",
-        "bajaj-power",
-      ].includes(client.slug),
-    ),
-  },
-
-  {
-    slug: "water-environment",
-    number: "03",
-    title: "Water & Environment",
-    entries: [],
-  },
-
-  {
-    slug: "railways-airports-transport",
-    number: "04",
-    title: "Railways, Airports & Transport",
-    entries: clients.filter((client) =>
-      [
-        "eurostation-euro-immo-star",
-        "munich-airport",
-      ].includes(client.slug),
-    ),
+    entries: [
+      org("client", { slug: "electra-elco", name: "Electra / Elco C&S", initials: "EE", country: "Israel", focus: "Electrical infrastructure, engineering and equipment", sector: "Energy, Power & Electrical Equipment", website: "https://www.electra.co.il/en/" }, { file: "electra-elco.png", source: "electra.co.il" }),
+      org("client", { slug: "shirdi-sai-electricals", name: "Shirdi Sai Electricals (SSEL)", initials: "SSEL", country: "India", focus: "Transformers and electrical equipment", sector: "Energy, Power & Electrical Equipment", website: "https://ssel.in/" }, { file: "shirdi-sai-electricals.png", source: "ssel.in" }),
+      org("client", { slug: "paramount-communications", name: "Paramount Communications (Paramount Cables)", initials: "PC", country: "India", focus: "Power and communication cables", sector: "Energy, Power & Electrical Equipment", website: "https://www.paramountcables.com/" }, { file: "paramount-communications.png", source: "paramountcables.com" }),
+      org("client", { slug: "bajaj-power", name: "Bajaj Power", initials: "BP", country: "India", focus: "Power generation", sector: "Energy, Power & Electrical Equipment", website: "https://www.bajajpower.com/" }, { file: "bajaj-power.jpg", source: "bajajpower.com" }),
+    ],
   },
 ];
 
-/**
- * Combined list for components that need every organization.
- */
-export const allPartners: PartnerEntry[] = [...partners, ...clients];
+export const clientSectors: PartnerCategory[] = allClientSectors
+  .map((c) => ({ ...c, entries: c.entries.filter((e) => !e.hidden) }))
+  .filter((c) => c.entries.length > 0);
+
+export const clients = clientSectors.flatMap((c) => c.entries);
+export const allPartners = [...partners, ...clients];
+
+

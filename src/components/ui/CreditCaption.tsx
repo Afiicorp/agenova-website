@@ -3,7 +3,7 @@ import { credit } from "@/data/credits";
 export function CreditCaption({ src, prefix = "Representative image", className = "" }: { src: string; prefix?: string; className?: string }) {
   const c = credit(src);
   return (
-    <figcaption className={`mt-2 text-xs leading-relaxed text-muted ${className}`} data-testid="image-credit">
+    <figcaption className={`mt-1.5 text-[11.5px] leading-relaxed text-muted ${className}`} data-testid="image-credit">
       {prefix}
       {c && (
         <>

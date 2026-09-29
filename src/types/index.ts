@@ -114,6 +114,7 @@ export type PartnerEntry = {
   logo: string;
   logoBg?: "dark";
   logoSource?: string;
+  hidden?: boolean;
 };
 
 export type PartnerCategory = {

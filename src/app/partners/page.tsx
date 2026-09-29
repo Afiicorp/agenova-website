@@ -23,6 +23,9 @@ export default function PartnersPage() {
             <h2 id="partners-list-title" className="h2">
               Partners
             </h2>
+            <p className="mt-3 max-w-3xl leading-relaxed text-muted" data-testid="partners-section-intro">
+              Organisations with which the AFII Group has collaborated on project development, engineering, technology, delivery and strategic initiatives.
+            </p>
             <ul className="mt-6 grid grid-cols-2 gap-x-4 gap-y-6 md:gap-x-6 md:gap-y-8 lg:grid-cols-4">
               {partners.map((e) => (
                 <PartnerEntryCard key={e.slug} entry={e} />
@@ -32,9 +35,14 @@ export default function PartnersPage() {
           <PartnerPhoto index={0} />
         </Reveal>
         <section aria-labelledby="clients-list-title" className="space-y-10 md:space-y-12" data-testid="clients-section">
-          <h2 id="clients-list-title" className="h2">
-            Clients
-          </h2>
+          <div>
+            <h2 id="clients-list-title" className="h2">
+              Clients
+            </h2>
+            <p className="mt-3 max-w-3xl leading-relaxed text-muted" data-testid="clients-section-intro">
+              Selected organisations for which the AFII Group has undertaken project development, advisory, engineering, transaction or related assignments.
+            </p>
+          </div>
           {clientSectors.map((c, i) => (
             <Reveal key={c.slug}>
               <div aria-labelledby={`${c.slug}-title`} role="group" data-testid={`partner-category-${c.slug}`}>

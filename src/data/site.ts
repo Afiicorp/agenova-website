@@ -51,8 +51,8 @@ export const site: SiteConfig = {
     ],
   },
   media: {
-    title: "Company Overview",
-    text: "A short overview of how AGENOVA works alongside project owners: structured engineering, coordinated procurement and disciplined construction management.",
+    title: "How We Work",
+    text: "AGENOVA works alongside owners, developers and investors from early project definition through engineering, procurement, construction management and handover — bringing together technical expertise, disciplined project management and a clear focus on delivery.",
     video: "/videos/company-overview.mp4",
     image: {
       src: "/images/general/company-overview.jpg",
@@ -117,10 +117,10 @@ export const site: SiteConfig = {
       },
       {
         id: "afii-group",
-        title: "The AFII Group Ecosystem",
+        title: "Part of the AFII Group",
         paragraphs: [
-          "AGENOVA is part of the wider AFII Group ecosystem. According to its published track record, the AFII Group has advised on and executed strategic engagements across infrastructure, energy, water and other sectors.",
-          "This ecosystem gives AGENOVA access to regional knowledge and established relationships in the markets where our clients develop projects.",
+          "AGENOVA is a subsidiary of AFII Capital Partners and forms part of the wider AFII Group. The Group has an established international track record and relationships across infrastructure, energy, water, transport and industrial development.",
+          "This platform gives AGENOVA access to international project experience, regional networks and established relationships that complement its engineering, EPCM and project delivery capabilities.",
         ],
       },
     ],
@@ -141,9 +141,9 @@ export const site: SiteConfig = {
       lead: "Eight service lines covering the project lifecycle, from early technical advice to construction and handover.",
     },
     projects: {
-      title: "Projects",
-      description: "Selected AFII Group engagements across water, energy, power and railway infrastructure.",
-      lead: "Selected engineering, infrastructure, energy and industrial engagements.",
+      title: "AFII Group Track Record",
+      description: "Selected international engagements from the AFII Group’s published track record across engineering, infrastructure, energy, water, transport and industrial development.",
+      lead: "Selected international engagements from the AFII Group’s published track record across engineering, infrastructure, energy, water, transport and industrial development.",
     },
     offices: {
       title: "Offices",
@@ -153,7 +153,7 @@ export const site: SiteConfig = {
     partners: {
       title: "Selected AFII Group Relationships",
       description: "Selected relationships of the AFII Group across engineering, energy, water and transport infrastructure.",
-      lead: "The organisations below illustrate selected relationships of the AFII Group across engineering, energy, water and transport infrastructure. Listing is for information only; names and logos belong to their respective owners.",
+      lead: "Selected organisations with which the AFII Group has established client and strategic partner relationships across engineering, infrastructure, energy, water and transport.",
     },
     leadership: {
       title: "Leadership",

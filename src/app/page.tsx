@@ -15,7 +15,7 @@ import { heroMedia } from "@/data/hero";
 import { offices } from "@/data/offices";
 import { clients, partners } from "@/data/partners";
 import { PartnerLink } from "@/components/partners/PartnerLink";
-import { projects } from "@/data/projects";
+import { PROJECTS_IMAGE_NOTE, projects } from "@/data/projects";
 import { services } from "@/data/services";
 import { site } from "@/data/site";
 import { publicFileExists } from "@/lib/assets";
@@ -64,8 +64,8 @@ export default function HomePage() {
 
       <section className="section" aria-labelledby="projects-title" data-testid="home-projects">
         <Reveal className="container-site">
-          <SectionHeader id="projects-title" title="Selected Projects" link={{ label: "All projects", href: "/projects", testId: "home-all-projects-link" }} />
-          <SourceNote className="-mt-4 mb-8" />
+          <SectionHeader id="projects-title" title="Selected AFII Group Track Record" link={{ label: "All projects", href: "/projects", testId: "home-all-projects-link" }} />
+          <SourceNote className="-mt-4 mb-8" text={`Selected engagements from the AFII Group’s published track record across infrastructure, energy, water, transport and industrial development. ${PROJECTS_IMAGE_NOTE}`} />
           <div className="grid gap-x-6 gap-y-10 md:grid-cols-3">
             {featured.map((p) => (
               <ProjectCard key={p.slug} project={p} />
