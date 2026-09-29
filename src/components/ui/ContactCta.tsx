@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { site } from "@/data/site";
 
 export function ContactCta() {
@@ -16,16 +16,17 @@ export function ContactCta() {
             Enquire Now
           </Link>
           <a
-            href={site.contact.whatsappUrl}
+            href={`mailto:${site.contact.email}`}
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-outline-light"
-            data-testid="cta-whatsapp-button"
+            data-testid="cta-email-button"
           >
-            WhatsApp
+            Email
           </a>
         </div>
       </div>
     </section>
   );
 }
+

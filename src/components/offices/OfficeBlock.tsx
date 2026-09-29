@@ -14,6 +14,8 @@ export function OfficeBlock({ office, reverse }: { office: Office; reverse: bool
       <div>
         <h2 className="h2">{office.city}</h2>
         <p className="mt-1 text-muted">{office.country}</p>
+        {office.name && <p className="mt-4 font-semibold text-navy" data-testid={`office-${office.slug}-name`}>{office.name}</p>}
+        {office.company && <p className="mt-1 text-[15px] text-muted" data-testid={`office-${office.slug}-company`}>{office.company}</p>}
         <p className="mt-4 leading-relaxed">{office.summary}</p>
         <dl className="mt-6 divide-y divide-line border-y border-line text-[15px]">
           <div className="grid grid-cols-[6rem_1fr] gap-4 py-3">
@@ -24,14 +26,16 @@ export function OfficeBlock({ office, reverse }: { office: Office; reverse: bool
               </a>
             </dd>
           </div>
-          <div className="grid grid-cols-[6rem_1fr] gap-4 py-3">
-            <dt className="text-muted">Email</dt>
-            <dd>
-              <a href={`mailto:${office.email}`} className="text-navy hover:underline" data-testid={`office-${office.slug}-email`}>
-                {office.email}
-              </a>
-            </dd>
-          </div>
+          {office.email && (
+            <div className="grid grid-cols-[6rem_1fr] gap-4 py-3">
+              <dt className="text-muted">Email</dt>
+              <dd>
+                <a href={`mailto:${office.email}`} className="text-navy hover:underline" data-testid={`office-${office.slug}-email`}>
+                  {office.email}
+                </a>
+              </dd>
+            </div>
+          )}
           <div className="grid grid-cols-[6rem_1fr] gap-4 py-3">
             <dt className="text-muted">Address</dt>
             <dd data-testid={`office-${office.slug}-address`}>{office.address}</dd>

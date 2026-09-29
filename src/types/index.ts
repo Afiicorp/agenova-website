@@ -93,9 +93,11 @@ export type Office = {
   city: string;
   country: string;
   summary: string;
+  name?: string;
+  company?: string;
   phoneDisplay: string;
   phoneHref: string;
-  email: string;
+  email?: string;
   address: string;
   mapUrl: string;
   image: ImageAsset;
@@ -122,14 +124,6 @@ export type PartnerCategory = {
   number: string;
   title: string;
   entries: PartnerEntry[];
-};
-
-export type Leader = {
-  slug: string;
-  name: string;
-  title: string;
-  initials: string;
-  photo: string;
 };
 
 export type EnquiryRecord = {

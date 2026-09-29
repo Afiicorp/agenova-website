@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Hero } from "@/components/home/Hero";
 import { MediaSection } from "@/components/home/MediaSection";
-import { LeadershipGrid } from "@/components/leadership/LeadershipGrid";
 import { PartnerLogo } from "@/components/partners/PartnerLogo";
 import { PartnerMarquee } from "@/components/partners/PartnerMarquee";
 import { ProjectCard } from "@/components/projects/ProjectCard";
@@ -77,7 +76,7 @@ export default function HomePage() {
       <section className="section border-t border-line" aria-labelledby="offices-title" data-testid="home-offices">
         <Reveal className="container-site">
           <SectionHeader id="offices-title" title="Offices" link={{ label: "All offices", href: "/offices", testId: "home-all-offices-link" }} />
-          <ul className="grid gap-6 sm:grid-cols-3">
+          <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {offices.map((o) => (
               <li key={o.slug}>
                 <Link href={`/offices#${o.slug}`} className="group block" data-testid={`home-office-${o.slug}`}>
@@ -134,12 +133,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section" aria-labelledby="leadership-title" data-testid="home-leadership">
-        <Reveal className="container-site">
-          <SectionHeader id="leadership-title" title="Leadership" link={{ label: "Leadership", href: "/leadership", testId: "home-leadership-link" }} />
-          <LeadershipGrid headingLevel="h3" compact />
-        </Reveal>
-      </section>
 
       <MediaSection hasVideo={publicFileExists(site.media.video)} />
       <ContactCta />

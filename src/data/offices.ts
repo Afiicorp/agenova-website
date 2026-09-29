@@ -40,4 +40,18 @@ export const offices: Office[] = [
     image: { src: "/images/offices/zug.jpg", alt: "Lakeside promenade in Zug with Lake Zug and mountains" },
     imageCaption: "Representative city imagery, Zug",
   },
+  {
+    slug: "delhi",
+    city: "Delhi",
+    country: "India",
+    summary: "Office contact for enquiries in India.",
+    name: "India Back Office / Office of the India Representative",
+    company: "AFII Corporate Advisors Limited",
+    phoneDisplay: "+91 11 46003500",
+    phoneHref: "+911146003500",
+    address: "Madam Sara Mathew Lane, B1/14 Safdarjung Enclave, New Delhi 110029, India",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=B1%2F14+Safdarjung+Enclave%2C+New+Delhi+110029%2C+India",
+    image: { src: "/images/offices/delhi.jpg", alt: "View over Connaught Place in New Delhi" },
+    imageCaption: "Representative city imagery, New Delhi",
+  },
 ];

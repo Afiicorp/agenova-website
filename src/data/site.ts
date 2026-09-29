@@ -1,4 +1,4 @@
-import type { SiteConfig } from "@/types";
+﻿import type { SiteConfig } from "@/types";
 
 const phoneHref = "+4915739482762";
 const whatsappNumber = "4915739482762";
@@ -27,7 +27,6 @@ export const site: SiteConfig = {
     { label: "Projects", href: "/projects" },
     { label: "Offices", href: "/offices" },
     { label: "Partners", href: "/partners" },
-    { label: "Leadership", href: "/leadership" },
   ],
   cta: { label: "Contact", href: "/contact" },
   legalNav: [
@@ -52,7 +51,7 @@ export const site: SiteConfig = {
   },
   media: {
     title: "How We Work",
-    text: "AGENOVA works alongside owners, developers and investors from early project definition through engineering, procurement, construction management and handover — bringing together technical expertise, disciplined project management and a clear focus on delivery.",
+    text: "AGENOVA works alongside owners, developers and investors from early project definition through engineering, procurement, construction management and handover â€” bringing together technical expertise, disciplined project management and a clear focus on delivery.",
     video: "/videos/company-overview.mp4",
     image: {
       src: "/images/general/company-overview.jpg",
@@ -142,27 +141,22 @@ export const site: SiteConfig = {
     },
     projects: {
       title: "AFII Group Track Record",
-      description: "Selected international engagements from the AFII Group’s published track record across engineering, infrastructure, energy, water, transport and industrial development.",
-      lead: "Selected international engagements from the AFII Group’s published track record across engineering, infrastructure, energy, water, transport and industrial development.",
+      description: "Selected international engagements from the AFII Groupâ€™s published track record across engineering, infrastructure, energy, water, transport and industrial development.",
+      lead: "Selected international engagements from the AFII Groupâ€™s published track record across engineering, infrastructure, energy, water, transport and industrial development.",
     },
     offices: {
       title: "Offices",
-      description: "AGENOVA offices in Frankfurt, London and Zug.",
-      lead: "Contact our offices in Frankfurt, London and Zug.",
+      description: "AGENOVA offices in Frankfurt, London, Zug and Delhi.",
+      lead: "Contact our offices in Frankfurt, London, Zug and Delhi.",
     },
     partners: {
       title: "Selected AFII Group Relationships",
       description: "Selected relationships of the AFII Group across engineering, energy, water and transport infrastructure.",
       lead: "Selected organisations with which the AFII Group has established client and strategic partner relationships across engineering, infrastructure, energy, water and transport.",
     },
-    leadership: {
-      title: "Leadership",
-      description: "The leadership team of AGENOVA.",
-      lead: "The leadership team of AGENOVA.",
-    },
     contact: {
       title: "Contact",
-      description: "Send an enquiry to AGENOVA or contact us by email, phone or WhatsApp.",
+      description: "Send an enquiry to AGENOVA using the contact form below.",
       lead: "Tell us about your project or requirement. Fields marked with * are required.",
     },
   },
@@ -268,3 +262,4 @@ export const site: SiteConfig = {
     },
   },
 };
+

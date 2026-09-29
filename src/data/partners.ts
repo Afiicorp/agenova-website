@@ -1,4 +1,4 @@
-﻿import type { PartnerCategory, PartnerEntry } from "@/types";
+import type { PartnerCategory, PartnerEntry } from "@/types";
 
 type Logo = { file: string; source: string; dark?: boolean };
 type Base = Omit<PartnerEntry, "logo" | "logoBg" | "logoSource" | "category">;
@@ -22,7 +22,7 @@ export const partners: PartnerEntry[] = [
   org("partner", { slug: "belgian-railways", name: "Belgian Railways", initials: "BR", country: "Belgium", focus: "Railway infrastructure and station redevelopment", sector: "Railways", website: "https://www.belgiantrain.be" }, { file: "belgian-railways.png", source: "Wikimedia Commons, SNCB logo.svg (public domain)" }),
   org("partner", { slug: "israel-electric-corporation", name: "Israel Electric Corporation (IEC)", initials: "IEC", country: "Israel", focus: "Power generation, transmission and distribution", sector: "Energy & Power", website: "https://iec-global.com/" }, { file: "israel-electric-corporation.svg", source: "Hebrew Wikipedia (IsraelElectric.svg)" }),
   org("partner", { slug: "mekorot", name: "Mekorot", initials: "M", country: "Israel", focus: "Water supply, treatment, desalination and wastewater infrastructure", sector: "Water", website: "https://www.mekorot.co.il/" }, { file: "mekorot.png", source: "mekorot-int.com", dark: true }),
-  org("partner", { slug: "obermeyer-group", name: "Obermeyer Group", initials: "OG", country: "Germany", focus: "Engineering and planning consultancy", sector: "Engineering", website: "https://www.obermeyer-group.com" }, { file: "obermeyer.svg", source: "obermeyer-group.com", dark: true }),
+  org("partner", { slug: "obermeyer-group", name: "Obermeyer Group", initials: "OG", country: "Germany", focus: "Engineering and planning consultancy", sector: "Engineering", website: "https://www.obermeyer-group.com" }, { file: "obermeyer.png", source: "obermeyer-group.com", dark: true }),
 ];
 
 export const allClientSectors: PartnerCategory[] = [
@@ -48,6 +48,15 @@ export const allClientSectors: PartnerCategory[] = [
       org("client", { slug: "bajaj-power", name: "Bajaj Power", initials: "BP", country: "India", focus: "Power generation", sector: "Energy, Power & Electrical Equipment", website: "https://www.bajajpower.com/" }, { file: "bajaj-power.jpg", source: "bajajpower.com" }),
     ],
   },
+  {
+    slug: "railways-airports-transport",
+    number: "03",
+    title: "Railways, Airports & Transport Infrastructure",
+    entries: [
+      org("client", { slug: "munich-airport", name: "Munich Airport", initials: "MA", country: "Germany", focus: "Airport infrastructure and operations", sector: "Railways, Airports & Transport Infrastructure", website: "https://www.munich-airport.com/", hidden: false }, { file: "munich-airport.png", source: "Wikimedia Commons, Flughafen munchen logo.png (public domain)" }),
+      org("client", { slug: "eurostation-euro-immo-star", name: "EuroStation / Euro Immo Star", initials: "ES", country: "Belgium", focus: "Railway engineering and station redevelopment", sector: "Railways, Airports & Transport Infrastructure", hidden: false }, { file: "eurostation.png", source: "eurostation.be (official site, Internet Archive snapshot 2017)" }),
+    ],
+  },
 ];
 
 export const clientSectors: PartnerCategory[] = allClientSectors
@@ -56,5 +65,3 @@ export const clientSectors: PartnerCategory[] = allClientSectors
 
 export const clients = clientSectors.flatMap((c) => c.entries);
 export const allPartners = [...partners, ...clients];
-
-

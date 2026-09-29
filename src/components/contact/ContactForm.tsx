@@ -10,7 +10,6 @@ import {
   type EnquiryField,
   type EnquiryInput,
 } from "@/lib/enquiry";
-import { enquiryWhatsappMessage, whatsappUrl } from "@/lib/whatsapp";
 
 type Status = "idle" | "sending" | "success" | "error";
 type FieldDef = {
@@ -46,7 +45,6 @@ export function ContactForm() {
   const [errors, setErrors] = useState<EnquiryErrors>({});
   const [status, setStatus] = useState<Status>("idle");
   const [submitted, setSubmitted] = useState<EnquiryInput | null>(null);
-  const [reference, setReference] = useState<string | undefined>();
   const [honeypot, setHoneypot] = useState("");
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -81,7 +79,6 @@ export function ContactForm() {
       const body = await res.json().catch(() => null);
       if (res.ok && body?.ok) {
         setSubmitted(data);
-        setReference(typeof body.reference === "string" ? body.reference : undefined);
         setValues(emptyEnquiry);
         setStatus("success");
         return;
@@ -104,15 +101,6 @@ export function ContactForm() {
           {MESSAGES.success}
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
-          <a
-            href={whatsappUrl(enquiryWhatsappMessage(submitted, reference))}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-primary"
-            data-testid="contact-whatsapp-continue-button"
-          >
-            Continue on WhatsApp
-          </a>
           <button
             type="button"
             className="btn btn-outline"

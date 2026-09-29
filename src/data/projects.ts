@@ -3,7 +3,6 @@ import type { Project, ProjectGroup } from "@/types";
 
 export const PROJECTS_SOURCE_URL = "https://afiicapital.com/transactions/";
 export const PROJECTS_IMAGE_NOTE = "Images are representative and do not show the project sites.";
-export const PROJECTS_SOURCE_NOTE = `Engagements listed in the AFII Group published track record (afiicapital.com). ${PROJECTS_IMAGE_NOTE}`;
 
 type Input = Omit<Project, "image" | "imageCredit" | "sourceUrl"> & { imageSrc: string; imageAlt: string };
 
