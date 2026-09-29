@@ -25,6 +25,7 @@ export const site: SiteConfig = {
     { label: "About", href: "/about" },
     { label: "Services", href: "/services" },
     { label: "Projects", href: "/projects" },
+    { label: "Transactions", href: "/transactions" },
     { label: "Offices", href: "/offices" },
     { label: "Partners", href: "/partners" },
   ],
@@ -262,4 +263,5 @@ export const site: SiteConfig = {
     },
   },
 };
+
 

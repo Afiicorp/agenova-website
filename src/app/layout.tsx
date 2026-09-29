@@ -1,11 +1,16 @@
 ﻿import type { Metadata, Viewport } from "next";
+import "@fontsource/ibm-plex-sans/400.css";
+import "@fontsource/ibm-plex-sans/500.css";
+import "@fontsource/ibm-plex-sans/600.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { site } from "@/data/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(site.url || "https://agenova-website-3ltu.vercel.app"),
+  metadataBase: new URL(
+    site.url || "https://agenova-website-3ltu.vercel.app"
+  ),
   title: {
     default: "AGENOVA | Engineering & EPCM",
     template: "%s | AGENOVA",
@@ -51,7 +56,7 @@ export default function RootLayout({
         />
       </head>
 
-      <body className="flex min-h-screen flex-col font-sans">
+      <body className="flex min-h-screen flex-col">
         <a
           href="#main"
           className="sr-only z-[60] bg-navy px-4 py-2 text-white focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
@@ -71,4 +76,3 @@ export default function RootLayout({
     </html>
   );
 }
-

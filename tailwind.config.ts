@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss";
+﻿import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: ["./src/**/*.{ts,tsx}"],
@@ -14,7 +14,7 @@ const config: Config = {
         placeholder: "#E6EAED",
       },
       fontFamily: {
-        sans: ["var(--font-plex)", "ui-sans-serif", "system-ui", "sans-serif"],
+        sans: ["IBM Plex Sans", "ui-sans-serif", "system-ui", "sans-serif"],
       },
     },
   },
@@ -22,3 +22,4 @@ const config: Config = {
 };
 
 export default config;
+

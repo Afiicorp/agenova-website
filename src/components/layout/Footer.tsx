@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/data/site";
 
@@ -44,10 +44,10 @@ export function Footer() {
           </ul>
         </div>
         <div className="mt-6 flex flex-wrap items-center gap-x-2 gap-y-1 border-t border-white/10 pt-4 text-xs" data-testid="footer-bottom">
-          <span data-testid="footer-copyright">Â© {new Date().getFullYear()} Agenova</span>
+          <span data-testid="footer-copyright">© {new Date().getFullYear()} Agenova</span>
           {[...site.legalNav, { label: "Image credits", href: "/image-credits" }].map((item) => (
             <span key={item.href} className="flex items-center gap-2">
-              <span aria-hidden="true">Â·</span>
+              <span aria-hidden="true">·</span>
               <Link href={item.href} className="hover:text-white" data-testid={`footer-${item.label.toLowerCase().replace(/\s+/g, "-")}-link`}>
                 {item.label}
               </Link>
