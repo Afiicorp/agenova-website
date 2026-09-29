@@ -5,7 +5,7 @@ import { site } from "@/data/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(site.url),
+  metadataBase: new URL(site.url || "https://agenova-website-3ltu.vercel.app"),
   title: {
     default: "AGENOVA | Engineering & EPCM",
     template: "%s | AGENOVA",
@@ -71,3 +71,4 @@ export default function RootLayout({
     </html>
   );
 }
+
