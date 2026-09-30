@@ -1,4 +1,4 @@
-﻿import type { SiteConfig } from "@/types";
+import type { SiteConfig } from "@/types";
 
 const phoneHref = "+4915739482762";
 const whatsappNumber = "4915739482762";
@@ -15,7 +15,7 @@ export const site: SiteConfig = {
     logoHeight: 67,
   },
   contact: {
-    email: "s@afii.eu",
+    email: "office@agenova.eu",
     phoneDisplay: "+49 157 39482762",
     phoneHref,
     whatsappNumber,

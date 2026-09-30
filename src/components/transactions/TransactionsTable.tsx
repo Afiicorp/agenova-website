@@ -157,11 +157,7 @@ export function TransactionsTable() {
                     >
                       {column.label}
                       <span aria-hidden="true" className="text-xs text-muted">
-                        {active
-                          ? sortDirection === "asc"
-                            ? "â–²"
-                            : "â–¼"
-                          : "•"}
+                        {active ? (sortDirection === "asc" ? "ASC" : "DESC") : ""}
                       </span>
                     </button>
                   </th>
@@ -226,7 +222,7 @@ export function TransactionsTable() {
             <span key={number} className="inline-flex items-center gap-1">
               {showEllipsis && (
                 <span className="px-2 text-muted" aria-hidden="true">
-                  â€¦
+                  ...
                 </span>
               )}
               <button

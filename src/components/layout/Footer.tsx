@@ -36,11 +36,6 @@ export function Footer() {
                 {contact.email}
               </a>
             </li>
-            <li>
-              <a href={contact.whatsappUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white" data-testid="footer-whatsapp-link">
-                Email
-              </a>
-            </li>
           </ul>
         </div>
         <div className="mt-6 flex flex-wrap items-center gap-x-2 gap-y-1 border-t border-white/10 pt-4 text-xs" data-testid="footer-bottom">
